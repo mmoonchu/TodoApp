@@ -116,6 +116,10 @@ code {
   font-size: 2vmin;
 }
 
+.user-email {
+  font-size: .7em;
+}
+
 .form-container {
   padding: 3vmin;
   background-color: var(--tan-1);
