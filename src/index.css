@@ -93,10 +93,12 @@ code {
 
 .login-expiration-button {
   background-color: #f5a549;
+  border-radius: 10px;
 }
 
 .logout-button {
   background-color: #f5a549;
+  border-radius: 10px;
 }
 
 .scroll-y {
