@@ -1,7 +1,15 @@
 const mongoose = require('mongoose');
-// Ensure the Category model is processed by Mongoose
-require('./category');
+const Schema = require('mongoose').Schema;
 
-const itemSchema = require('./itemSchema');
+const itemSchema = new Schema({
+  title: { type: String },
+  desc: { type: String },
+  category: { type: Schema.Types.ObjectId, ref: 'Category' },
+  status: Boolean
+}, {
+  timestamps: true
+});
 
-module.exports = mongoose.model('Item', itemSchema);
+const Item = mongoose.model('Item', itemSchema);
+
+module.exports = Item;
