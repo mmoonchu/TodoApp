@@ -116,6 +116,17 @@ code {
   font-size: 2vmin;
 }
 
+.link {
+  padding: .8em 1.6em;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: #E4AB4E;
+  color: white;
+}
+
 .user-email {
   font-size: .7em;
 }
