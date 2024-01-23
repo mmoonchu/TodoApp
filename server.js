@@ -1,5 +1,5 @@
 // Requires
-require('dotenv').config();
+require('dotenv').config()
 require('./config/database');
 const express = require("express");
 const path = require("path");
@@ -15,25 +15,11 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "build")));
 app.use(require('./config/checkToken'));
-
-// Create route
-app.post('/todo', async (req, res) => {
-  try {
-    const createdItem = await Item.create(req.body);
-    console.log('Created Item:', createdItem);
-    res.redirect('/todo');
-  } catch (err) {
-    console.error('Error creating item:', err);
-    res.status(500).send('Internal Server Error');
-  }
-});
-
-// API routes
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
-// React app route
+// Routes
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
@@ -41,4 +27,16 @@ app.get("/*", function (req, res) {
 // Server
 app.listen(port, function () {
   console.log(`Express app running on port ${port}`);
+});
+
+app.post('/todo', async (req, res) => {
+  try {
+    const createdItem = await Item.create(req.body);
+
+    console.log('Created Item:', createdItem);
+    res.redirect('/todo');
+  } catch (err) {
+    console.error('Error creating item:', err);
+    res.status(500).send('Internal Server Error');
+  }
 });
