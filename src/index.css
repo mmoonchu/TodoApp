@@ -73,6 +73,20 @@ code {
   justify-content: flex-end;
 }
 
+.form-box {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  max-width: 50%;
+}
+
 .scroll-y {
   overflow-y: scroll;
 }

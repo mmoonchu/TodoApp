@@ -31,7 +31,7 @@ async function handleSubmit(evt) {
 }
 
 return (
-  <div>
+  <div className='form-box'>
     <h1>Log In</h1>
     <div className="form-container" onSubmit={handleSubmit}>
       <form autoComplete="off" >
