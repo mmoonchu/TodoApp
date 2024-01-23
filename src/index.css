@@ -55,6 +55,10 @@ code {
   text-align: right;
 }
 
+.change-auth-button {
+  cursor: pointer;
+}
+
 .smaller {
   font-size: smaller;
 }
