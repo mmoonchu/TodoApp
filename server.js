@@ -5,7 +5,7 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
-const port = 3001;
+const port = process.env.PORT || 3001;
 const app = express();
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 
@@ -17,7 +17,6 @@ app.use(require('./config/checkToken'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
-
 
 // Routes
 app.get("/*", function (req, res) {
