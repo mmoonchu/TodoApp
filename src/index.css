@@ -102,6 +102,12 @@ code {
   border-radius: 10px;
 }
 
+.form {
+  width: 50%;
+  max-width: 30rem;
+  margin: auto;
+}
+
 .scroll-y {
   overflow-y: scroll;
 }
