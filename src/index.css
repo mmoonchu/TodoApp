@@ -97,6 +97,7 @@ code {
 }
 
 .logout-button {
+  padding: .6em 1em;
   background-color: #f5a549;
   border-radius: 10px;
 }
