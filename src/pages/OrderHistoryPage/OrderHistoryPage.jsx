@@ -12,7 +12,7 @@ const handleCheckToken = () =>{
   return (
     <>
     <h1> OrderHistory Page</h1>
-    <button onClick={handleCheckToken}> Check Login Expiration </button>
+    <button className='login-expiration-button' onClick={handleCheckToken}> Check Login Expiration </button>
     
     </>
   )

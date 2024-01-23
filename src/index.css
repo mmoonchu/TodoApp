@@ -91,6 +91,14 @@ code {
   max-width: 50%;
 }
 
+.login-expiration-button {
+  background-color: rgb(249, 149, 35);
+}
+
+.logout-button {
+  background-color: rgb(249, 149, 35);
+}
+
 .scroll-y {
   overflow-y: scroll;
 }
