@@ -7,7 +7,6 @@ function NewItemPage() {
       <form action="/todo" method="POST"><br/>
         Title: <input style={{margin:"1em"}} type="text" name="title" /><br/>
         Description: <input  style={{margin:"1em"}} type="text" name="desc" /><br/>
-        {/* Ready2Eat: <input  style={{margin:"1em"}}type="checkbox" name="readyToEat" /><br/> */}
         <input style={{margin:"1em"}} type="submit" value="Create Item" />
       </form>
     </div>
