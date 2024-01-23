@@ -92,11 +92,11 @@ code {
 }
 
 .login-expiration-button {
-  background-color: #E4AB4E;
+  background-color: #f5a549;
 }
 
 .logout-button {
-  background-color: #E4AB4E;
+  background-color: #f5a549;
 }
 
 .scroll-y {
@@ -120,10 +120,11 @@ code {
   padding: .8em 1.6em;
   color: var(--text-dark);
   text-decoration: none;
+  border-radius: 10px;
 }
 
 .link:hover {
-  background-color: #E4AB4E;
+  background-color: #f7a74c;
   color: white;
 }
 
