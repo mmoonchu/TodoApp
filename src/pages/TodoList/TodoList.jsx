@@ -1,7 +1,7 @@
 import React from 'react'
 import * as usersService from "../../utilities/users-service"; 
 
-function OrderHistoryPage() {
+function TodoList() {
 
 const handleCheckToken = () =>{
   let exp = usersService.checkToken()
@@ -11,11 +11,11 @@ const handleCheckToken = () =>{
 
   return (
     <>
-    <h1> OrderHistory Page</h1>
+    <h1>Todo List</h1>
     <button className='login-expiration-button' onClick={handleCheckToken}> Check Login Expiration </button>
     
     </>
   )
 }
 
-export default OrderHistoryPage
+export default TodoList
