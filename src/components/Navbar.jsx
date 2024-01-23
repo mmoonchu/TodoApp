@@ -14,7 +14,7 @@ function Navbar({user ,setUser}) {
       <nav style={{ justifyContent: "space-evenly", alignItems: "center", display: "flex" }}>
 
       <div style={{justifyContent:'space-around'}}>
-        <p style={{margin:'1em'}}>Welcome {user.name}</p><hr/>
+        <p className="user-welcome">Welcome {user.name}</p>
         <p className="user-email">Logged In: {user.email}</p>
         <Link to="" onClick={handleLogOut}><button className="logout-button">Log Out</button></Link>
       </div>
