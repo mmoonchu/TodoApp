@@ -153,7 +153,16 @@ code {
 }
 
 .edit-page {
+  width: 100%;
+  max-width: 50rem;
   color: var(--text-dark);
+}
+
+.edit-page-container {
+  display: flex;
+  width: 100%;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 .scroll-y {

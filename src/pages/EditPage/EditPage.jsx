@@ -80,7 +80,7 @@ function EditPage({ user, setUser }) {
   }
 
   return (
-    <>
+    <div className='edit-page-container'>
       <h2>Edit Task</h2>
       <form className='edit-page' onSubmit={handleSubmit}>
         Title: <input type="text" name="title" defaultValue={item.title} onChange={handleChange} /><br />
@@ -88,7 +88,7 @@ function EditPage({ user, setUser }) {
         <input className='submit-button' type="submit" value="Submit Changes" />
       </form>
         <button className='delete-button' onClick={handleDelete}>Delete Task</button>
-    </>
+    </div>
   );
 }
 
