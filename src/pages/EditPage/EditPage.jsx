@@ -38,6 +38,21 @@ function EditPage({ user, setUser }) {
       console.error('Error updating item:', err);
     }
   };
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`/todo/edit/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.ok) {
+        window.location.href = '/todo';
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -68,6 +83,7 @@ function EditPage({ user, setUser }) {
         Title: <input type="text" name="title" defaultValue={item.title} onChange={handleChange} /><br />
         Desc: <input type="text" name="desc" defaultValue={item.desc} onChange={handleChange} /><br />
         <input type="submit" value="Submit Changes" />
+        <button onClick={handleDelete}>Delete</button>
       </form>
     </>
   );
