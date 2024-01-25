@@ -33,7 +33,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  /* background-image: linear-gradient(var(--tan-4), #99c2ff); */
   padding: 2vmin;
   height: 100vh;
 }
