@@ -36,10 +36,10 @@ function TodoList() {
       <h1>To-do List</h1>
       <div className='tasks'>
         {mongoData.map((item) => (
-          <div className='task'>
-            <p className='title' key={item._id}>{item.title}</p>
+          <a className='task' href={`/todo/${item.id}`}>
+            <p className='title' key={item.id}>{item.title}</p>
             <p className='desc' key={item.id}>{item.desc}</p>
-          </div>
+          </a>
         ))}
       </div>
     </>
