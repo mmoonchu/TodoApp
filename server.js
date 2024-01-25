@@ -65,6 +65,18 @@ app.delete('/todo/edit/:id', async (req, res) => {
   }
 });
 
+app.get('/todo/:id', async (req, res) => {
+  const itemId = req.params.id;
+  try {
+    const foundItem = await Item.findById(itemId);
+    if (foundItem) {
+      res.json(foundItem);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.get('/todo', async (req, res) => {
   try {
     const allItems = await Item.find({});

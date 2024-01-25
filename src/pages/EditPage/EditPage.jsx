@@ -68,12 +68,16 @@ function EditPage({ user, setUser }) {
           setItem(data);
         }
       } catch (error) {
-        console.error(error);
+        console.error('erorr:', error);
       }
     };
 
     fetchItem();
   }, [id]);
+
+  if (!item.title) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
