@@ -23,9 +23,29 @@ function TodoList() {
         console.error('Error fetching MongoDB data:', error);
       }
     };
-
     fetchData();
   }, []);
+
+  const handleStatusChange = async (itemId, status) => {
+    try {
+      const response = await fetch(`/todo/${itemId}/status`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: !status }),
+      });
+      if (response.ok) {
+        setMongoData((prevData) =>
+          prevData.map((item) =>
+            item._id === itemId ? { ...item, status: !status } : item
+          )
+        );
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -35,7 +55,10 @@ function TodoList() {
           <Link className='task' to={`/todo/edit/${item._id}`} key={item._id}>
             <p className='title'>{item.title}</p>
             <p className='desc'>{item.desc}</p>
-            <input type="checkbox" name="status" onClick={(e) => {e.stopPropagation();}}/><br/>
+            <input type="checkbox" name="status" checked={item.status}
+            onClick={(e) => {e.stopPropagation();}}
+            onChange={() => handleStatusChange(item._id, item.status)}
+            /><br/>
           </Link>
         ))}
       </div>

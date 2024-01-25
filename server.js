@@ -65,6 +65,19 @@ app.delete('/todo/edit/:id', async (req, res) => {
   }
 });
 
+app.put('/todo/:id/status', async (req, res) => {
+  const itemId = req.params.id;
+  try {
+    const updatedItem = await Item.findByIdAndUpdate(itemId, { status: req.body.status }, { new: true });
+    if (updatedItem) {
+      res.json(updatedItem);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+
 app.get('/todo/:id', async (req, res) => {
   const itemId = req.params.id;
   try {

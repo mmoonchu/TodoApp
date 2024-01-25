@@ -36,7 +36,7 @@ function EditPage({ user, setUser }) {
         window.location.href = `/todo/`;
       }
     } catch (err) {
-      console.error('Error updating item:', err);
+      console.error(err);
     }
   };
   const handleDelete = async () => {
