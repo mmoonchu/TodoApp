@@ -20,11 +20,9 @@ function EditPage({ user, setUser }) {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.title) {
-      return;
-    }
   
     try {
+        console.log('submit')
       const response = await fetch(`/todo/edit/${id}`, {
         method: 'PUT',
         headers: {
@@ -66,6 +64,10 @@ function EditPage({ user, setUser }) {
         if (response.ok) {
           const data = await response.json();
           setItem(data);
+          setFormData({
+            title: item.title,
+            desc: item.desc
+          })
         }
       } catch (error) {
         console.error('error:', error);
