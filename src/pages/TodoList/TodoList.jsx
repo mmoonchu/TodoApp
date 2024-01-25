@@ -35,6 +35,7 @@ function TodoList() {
           <Link className='task' to={`/todo/edit/${item._id}`} key={item._id}>
             <p className='title'>{item.title}</p>
             <p className='desc'>{item.desc}</p>
+            <input type="checkbox" name="status" onClick={(e) => {e.stopPropagation();}}/><br/>
           </Link>
         ))}
       </div>
