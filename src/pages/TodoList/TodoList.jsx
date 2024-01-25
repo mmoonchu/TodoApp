@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import * as usersService from "../../utilities/users-service"; 
+import { Link } from 'react-router-dom';
+import * as usersService from '../../utilities/users-service'; 
 
 function TodoList() {
 
@@ -36,10 +37,10 @@ function TodoList() {
       <h1>To-do List</h1>
       <div className='tasks'>
         {mongoData.map((item) => (
-          <a className='task' href={`/todo/${item.id}`}>
-            <p className='title' key={item.id}>{item.title}</p>
-            <p className='desc' key={item.id}>{item.desc}</p>
-          </a>
+          <Link className='task' to={`/todo/edit/${item._id}`} key={item._id}>
+            <p className='title'>{item.title}</p>
+            <p className='desc'>{item.desc}</p>
+          </Link>
         ))}
       </div>
     </>

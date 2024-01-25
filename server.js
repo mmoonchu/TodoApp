@@ -2,6 +2,7 @@
 require('dotenv').config()
 require('./config/database');
 const express = require("express");
+const methodOverride = require("method-override");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
@@ -14,6 +15,7 @@ const Item = require('./models/item');
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "build")));
+app.use(methodOverride("_method"));
 app.use(require('./config/checkToken'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
@@ -27,6 +29,10 @@ app.listen(port, function () {
   console.log(`Express app running on port ${port}`);
 });
 
+app.get('/todo/edit/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 app.post('/todo', async (req, res) => {
   try {
     const createdItem = await Item.create(req.body);
@@ -36,6 +42,17 @@ app.post('/todo', async (req, res) => {
   } catch (err) {
     console.error('Error creating item:', err);
     res.status(500).send('Internal Server Error');
+  }
+});
+
+app.put('/todo/edit/:id', async (req, res) => {
+  const itemId = req.params.id;
+  try {
+    const updatedItem = await Item.findByIdAndUpdate(itemId, req.body, { new: true });
+    res.json(updatedItem);
+    // res.redirect('/todo');
+  } catch (error) {
+    console.error(error);
   }
 });
 
