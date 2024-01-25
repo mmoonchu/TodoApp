@@ -4,11 +4,6 @@ import * as usersService from '../../utilities/users-service';
 
 function TodoList() {
 
-  // const handleCheckToken = () =>{
-  //   let exp = usersService.checkToken()
-  //   console.log(exp)
-  // }
-
   const [mongoData, setMongoData] = useState([]);
 
   useEffect(() => {

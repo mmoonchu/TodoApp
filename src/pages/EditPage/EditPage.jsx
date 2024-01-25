@@ -40,7 +40,6 @@ function EditPage({ user, setUser }) {
   };
 
   useEffect(() => {
-    // Fetch the item data based on the id
     const fetchItem = async () => {
       try {
         const response = await fetch(`/todo/${id}`, {
@@ -60,7 +59,7 @@ function EditPage({ user, setUser }) {
     };
 
     fetchItem();
-  }, [id]); // Fetch item data whenever the id changes
+  }, [id]);
 
   return (
     <>
