@@ -114,8 +114,14 @@ code {
   max-width: 30rem;
   border-radius: 10px;
   margin: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.622);
   padding: 5px 10px 5px;
   background-color: #b7d4ff;
+}
+
+.task:hover {
+  background-color: #a4c9ff;
+  cursor: pointer;
 }
 
 .tasks {
