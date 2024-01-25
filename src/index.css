@@ -59,6 +59,12 @@ code {
   cursor: pointer;
 }
 
+.delete-button {
+  margin: 2rem auto;
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
 .smaller {
   font-size: smaller;
 }
@@ -139,6 +145,10 @@ code {
 
 .desc {
   margin: auto;
+}
+
+.edit-page {
+  color: var(--text-dark);
 }
 
 .scroll-y {

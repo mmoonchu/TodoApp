@@ -78,13 +78,13 @@ function EditPage({ user, setUser }) {
 
   return (
     <>
-      <h2>Edit Page</h2>
-      <form onSubmit={handleSubmit}>
+      <h2>Edit Task</h2>
+      <form className='edit-page' onSubmit={handleSubmit}>
         Title: <input type="text" name="title" defaultValue={item.title} onChange={handleChange} /><br />
         Desc: <input type="text" name="desc" defaultValue={item.desc} onChange={handleChange} /><br />
         <input type="submit" value="Submit Changes" />
-        <button onClick={handleDelete}>Delete</button>
       </form>
+        <button className='delete-button' onClick={handleDelete}>Delete Task</button>
     </>
   );
 }
