@@ -33,7 +33,7 @@ function EditPage({ user, setUser }) {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        window.location.href = `/todo/`;
+        navigate('/todo');
       }
     } catch (err) {
       console.error(err);

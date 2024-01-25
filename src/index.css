@@ -196,6 +196,11 @@ code {
   color: white;
 }
 
+.title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
 .user-email {
   font-size: .7em;
 }
