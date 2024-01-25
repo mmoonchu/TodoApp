@@ -10,4 +10,4 @@ This is a simple Todo List application built using the MERN (MongoDB, Express.js
 - **Update:** Edit existing tasks to modify their details
 - **Delete:** Remove tasks from the list
 
-![alt text](https://i.gyazo.com/cde2638e16fc518a6399a373148e520b.png)
+![alt text](https://i.gyazo.com/24a05306103cc43427386e47ef65ed24.png)
