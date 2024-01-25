@@ -40,3 +40,12 @@ app.post('/todo', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+app.get('/todo', (req,res)=>{
+  Item.find({}, (err, allItems) => {
+      items: allItems;
+      res.render('TodoList', {
+          items: allItems
+      })
+  })
+})

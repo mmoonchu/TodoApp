@@ -21,7 +21,7 @@ function Navbar({user ,setUser}) {
 
         <Link to="/todo" className="todo-link link">To-do List</Link>
 
-        <Link to="/todo/new" className="todo-new-link link">New Item</Link>
+        <Link to="/todo/new" className="todo-new-link link">New Task</Link>
       </nav>
     </>
   );

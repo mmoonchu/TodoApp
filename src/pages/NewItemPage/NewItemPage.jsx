@@ -37,12 +37,12 @@ function NewItemPage() {
 
   return (
     <div>
-      <h1>Create a To-do Item</h1>
+      <h1>Create a Task</h1>
       <form className='form' onSubmit={handleSubmit}>
         <br/>
         Title: <input style={{margin:"1em"}} type="text" name="title" onChange={handleChange} /><br/>
         Description: <input  style={{margin:"1em"}} type="text" name="desc" onChange={handleChange} /><br/>
-        <input style={{margin:"1em"}} type="submit" value="Create Item" />
+        <input style={{margin:"1em"}} type="submit" value="Create Task" />
       </form>
     </div>
   );
