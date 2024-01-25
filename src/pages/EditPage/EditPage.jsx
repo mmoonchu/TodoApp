@@ -68,7 +68,7 @@ function EditPage({ user, setUser }) {
           setItem(data);
         }
       } catch (error) {
-        console.error('erorr:', error);
+        console.error('error:', error);
       }
     };
 
