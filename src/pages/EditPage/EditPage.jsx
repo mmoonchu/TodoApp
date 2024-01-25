@@ -82,7 +82,7 @@ function EditPage({ user, setUser }) {
       <form className='edit-page' onSubmit={handleSubmit}>
         Title: <input type="text" name="title" defaultValue={item.title} onChange={handleChange} /><br />
         Desc: <input type="text" name="desc" defaultValue={item.desc} onChange={handleChange} /><br />
-        <input type="submit" value="Submit Changes" />
+        <input className='submit-button' type="submit" value="Submit Changes" />
       </form>
         <button className='delete-button' onClick={handleDelete}>Delete Task</button>
     </>

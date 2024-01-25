@@ -115,6 +115,11 @@ code {
   color: black
 }
 
+.submit-button {
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
 .task {
   min-width: 10em;
   max-width: 30rem;
