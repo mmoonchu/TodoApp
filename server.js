@@ -20,9 +20,7 @@ app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
 // Routes
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+
 
 // Server
 app.listen(port, function () {
@@ -41,11 +39,16 @@ app.post('/todo', async (req, res) => {
   }
 });
 
-app.get('/todo', (req,res)=>{
-  Item.find({}, (err, allItems) => {
-      items: allItems;
-      res.render('TodoList', {
-          items: allItems
-      })
-  })
-})
+app.get('/todo', async (req, res) => {
+  try {
+    const allItems = await Item.find({});
+    res.json(allItems);
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
