@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function EditPage({ user, setUser }) {
   const { id } = useParams();
   const [item, setItem] = useState({});
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -40,15 +41,13 @@ function EditPage({ user, setUser }) {
   };
   const handleDelete = async () => {
     try {
+        navigate('/todo');
       const response = await fetch(`/todo/edit/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      if (response.ok) {
-        window.location.href = '/todo';
-      }
     } catch (err) {
       console.error(err);
     }
