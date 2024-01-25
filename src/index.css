@@ -109,6 +109,30 @@ code {
   color: black
 }
 
+.task {
+  min-width: 10em;
+  max-width: 30rem;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px 10px 5px;
+  background-color: #b7d4ff;
+}
+
+.tasks {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin: auto;
+}
+
+.desc {
+  margin: auto;
+}
+
 .scroll-y {
   overflow-y: scroll;
 }

@@ -34,11 +34,14 @@ function TodoList() {
   return (
     <>
       <h1>To-do List</h1>
-      <ul>
+      <div className='tasks'>
         {mongoData.map((item) => (
-          <li key={item._id}>{item.title}</li>
+          <div className='task'>
+            <p className='title' key={item._id}>{item.title}</p>
+            <p className='desc' key={item.id}>{item.desc}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   )
 }
