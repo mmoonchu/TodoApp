@@ -5,7 +5,9 @@ This is a simple Todo List application built using the MERN (MongoDB, Express.js
 ## Features
 
 - **User Authentication:** Users can sign up and log in securely to manage their todo list.
-- **Create Todo:** Add new tasks to the list with a title and description
-- **Read Todo:** View the list of todos with details such as title, description, and status
-- **Update Todo:** Edit existing items to modify their details.
-- **Delete Todo:** Remove items from the list.
+- **Create:** Add new tasks to the list with a title and description
+- **Read:** View the list of tasks with details such as title, description, and status
+- **Update:** Edit existing tasks to modify their details
+- **Delete:** Remove tasks from the list
+
+![alt text](https://i.gyazo.com/cde2638e16fc518a6399a373148e520b.png)
