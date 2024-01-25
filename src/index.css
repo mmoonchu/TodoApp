@@ -183,6 +183,7 @@ code {
 }
 
 .link {
+  border: 1px solid transparent;
   padding: .6em 1.2em;
   color: var(--text-dark);
   text-decoration: none;
@@ -190,6 +191,7 @@ code {
 }
 
 .link:hover {
+  border: 1px solid white;
   background-color: #f7a74c;
   color: white;
 }
